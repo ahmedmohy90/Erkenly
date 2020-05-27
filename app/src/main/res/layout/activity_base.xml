@@ -5,7 +5,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BaseActivity">
+    tools:context=".base.base.activities.BaseActivity">
+
+    <include
+        android:id="@+id/toolbat_view"
+        android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+        layout="@layout/tool_bar"/>
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_lauout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbat_view">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <FrameLayout
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </FrameLayout>
+        </RelativeLayout>
+        <include
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            layout="@layout/side_menu"/>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
 
 
 </RelativeLayout>
